@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image\png" href="bookIcon.png">
+    <title>login:課題管理システム</title>
+    <style type="text/css">
+      body{
+        margin: 0;
+      }
+      div.header{
+        background: lightgreen;
+        height: 50px;
+        font-size: 2rem;
+        position: sticky;
+        top: 0;
+        color:#4b4b4b;
+        z-index:100;
+        display: -wevkit-flex;
+        display: flex;
+        align-items:flex-start;
+      }
+      div.header img{
+        margin-top: 5px;
+        margin-left: 5px;
+        margin-right: 40px;
+        margin-bottom: 5px;
+      }
+      div.header a{
+        text-decoration: none;
+      }
+      a snap.align_top{
+        vertical-align: top;
+      }
+      div.header a:link{color:#4b4b4b}
+      div.header a:visited{color:#4b4b4b}
+      .mainContent{
+        width: 100vw;
+        background: linear-gradient(135deg,hotpink,white);
+        text-align: right;
+        margin: 0;
+        margin-left: 1rem;
+      }
+      .mainContent div.content{
+        width: 400px;
+        background: rgba(0,0,0,0);
+      }
+      .mainContent p{margin:0;}
+    </style>
+  </head>
+  <body>
+    <script type="text/javascript">
+      
+      setTimeout(function MovePage(){//ページ遷移(scriptEnd)
+        window.location.href="index.html";
+      },3000);
+    </script>
+    <div class="mainContent">
+      <div class="content">
+        <br>ログインに成功しました<br>
+        3秒後に遷移します<br>
+      </div>
+    </div>
+  </body>
+</html>

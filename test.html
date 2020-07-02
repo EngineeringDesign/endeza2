@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>cookie sample1</title>
+</head>
+<body>
+  <input id="input1" value=""/><br>
+  <button onclick="writeCookie()">書き込み</button><br>
+  <button onclick="readCookie()">読み込み</button><br>
+  <button onclick="deleteCookie()">削除</button><br><br>
+
+
+
+  <script type="text/javascript">
+    // cookieの値を読み書きする要素
+    var input1 = document.getElementById("input1");
+
+    // 書き込み
+    function writeCookie() {
+      var cookieValue = input1.value;
+      document.cookie = "mycookie=" + cookieValue;
+      console.log(document.cookie);
+    }
+
+    // 読み込み
+    function readCookie() {
+      var tmp = document.cookie;
+      var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)mycookie\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+      input1.value = cookieValue;
+      console.log(document.cookie);
+    }
+
+    // 削除
+    function deleteCookie() {
+      document.cookie = "mycookie=; expires=0";
+      console.log(document.cookie);
+    }
+  </script>
+</body>
+</html>
