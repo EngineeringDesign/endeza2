@@ -31,9 +31,27 @@
     <div class="loginContent">
       <div class="content">
         <from method="post" action=""><br>
-          <div class="textAlignLeft">新規登録</div>
-          <label>ユーザーネーム</label>
-          <p><input type="submit"></p>
+          <div class="textAlignLeft">新規登録</div><br>
+          <!-- inputのmaxlength,minlength属性を使うと
+          最大、最小文字数を設定できる-->
+          <p>
+            <div class="textAlignLeft">ユーザーネーム(XX文字以内)</div>
+            <input type="text" id="userID" name="userID" required>
+          </p>
+          <p>
+            <div class="textAlignLeft">メールアドレス</div>
+            <input type="text" id="email" name="email" required>
+          </p>
+          <p>
+            <div class="textAlignLeft">パスワード</div>
+            <input type="password" id="password" name="password" required>
+          </p>
+          <p>
+            <div class="textAlignLeft">パスワード（確認のためもう1回）</div>
+            <input type="password" id="password2" name="password2" required>
+          </p>
+          <input type="button" value="確認">
+          <!--buttonはonclick属性で動かしたいjavascriptの関数が使える-->
         </from>
       </div>
     </div>

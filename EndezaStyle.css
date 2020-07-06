@@ -2,13 +2,13 @@ body{
   margin: 0;
   /*font-family: ;*/
 }
-div.textAlignRight{
+.textAlignRight{
   text-align: right;
 }
-div.textAlignLeft{
+.textAlignLeft{
   text-align: left;
 }
-div.textAlignCenter{
+.textAlignCenter{
   text-align: center;
 }
 div.header{
@@ -42,16 +42,17 @@ div.header a:visited{color:#4b4b4b}
   width: 100vw;
   background: linear-gradient(135deg,hotpink,white);
   text-align: right;
+  padding-bottom: 1rem;
 }
-.loginContent div.content{
-  width: 400px;
+.loginContent .content{
+  margin-left: 100px;
+  width: 300px;
   background: rgba(0,0,0,0);
 }
 .loginContent h1{
   margin: 0;
   background: rgba(0,0,0,0);
 }
-.loginContent p{margin:0;}
 .mainContent a:link{color:#235AFF}
 .mainContent a:visited{color:#235AFF}
 .mainContent a:hover{color:deeppink}
@@ -59,6 +60,9 @@ div.header a:visited{color:#4b4b4b}
 .mainContent{
   display:-wevkit-flex;
   display:flex;
+}
+.contentBottomBR{
+  padding-bottom: 1rem;
 }
 .leftmenuBlock{
   width: 150px;
