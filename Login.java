@@ -3,6 +3,7 @@ import java.lang.Exception;
 
 class Login extends HashPasswd{
     private String savedPasswd;
+    // 例外
     class NullStringReceiveException extends Exception{
         private static final long serialVersionUID = 1L;
         NullStringReceiveException(String msg){
@@ -15,6 +16,7 @@ class Login extends HashPasswd{
             super("seacrch string record is not exsist in this Table");
         }
     }
+    // 初期化
     public void init(){
         savedPasswd = "";
     }
@@ -25,6 +27,8 @@ class Login extends HashPasswd{
             e.printStackTrace();
         }
     }
+    // パスワードの認証
+    // 認証が通るとtrueが返ってくる
     public boolean hashedPasswordVerificate(String received){
         try{
             if(savedPasswd == null) throw new NullStringReceiveException("");
@@ -35,7 +39,9 @@ class Login extends HashPasswd{
         if(savedPasswd.compareTo(received) == 0)return true;
         return false;
     }
-    
+    // DBからハッシュされたパスワードを拾う
+    // DBにユーザIDもしくはパスワードがないならSQLNoMtchRecordExceptionを投げる
+    // つまり、そんな人がいないを知らせる
     public void sqlSelectUserSavedPasswd(String userID) throws SQLNoMatchRecordException{
         Connection connection = DBManager.getUserConnection();
         String sql = "SELECT HashedPassword FROM LoginInfo WHERE UserID=?";
@@ -58,6 +64,7 @@ class Login extends HashPasswd{
         }
         savedPasswd = result;
     }
+    // DBの検索結果が何行ぶんあるかを返す
     private int getResultSetRows(ResultSet res){
         try{
             if(res.next()){
