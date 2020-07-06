@@ -16,7 +16,11 @@ class Login extends HashPasswd{
             super("seacrch string record is not exsist in this Table");
         }
     }
-    // 初期化
+    // コンストラクタ
+    void HashPasswd(){
+        init();
+    }
+    // 初期化: savedPasswd
     public void init(){
         savedPasswd = "";
     }
@@ -39,7 +43,7 @@ class Login extends HashPasswd{
         if(savedPasswd.compareTo(received) == 0)return true;
         return false;
     }
-    // DBからハッシュされたパスワードを拾う
+    // DBからハッシュされたパスワードを拾う->this.savedPasswdに送る
     // DBにユーザIDもしくはパスワードがないならSQLNoMtchRecordExceptionを投げる
     // つまり、そんな人がいないを知らせる
     public void sqlSelectUserSavedPasswd(String userID) throws SQLNoMatchRecordException{
@@ -64,7 +68,7 @@ class Login extends HashPasswd{
         }
         savedPasswd = result;
     }
-    // DBの検索結果が何行ぶんあるかを返す
+    // DBの検索結果が何行あるかを返す
     private int getResultSetRows(ResultSet res){
         try{
             if(res.next()){

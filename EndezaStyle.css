@@ -1,7 +1,3 @@
-.mainContent a:link{color:#235AFF}
-.mainContent a:visited{color:#235AFF}
-.mainContent a:hover{color:deeppink}
-.mainContent a:active{color:red}
 body{
   margin: 0;
 }
@@ -32,6 +28,20 @@ a snap.align_top{
 }
 div.header a:link{color:#4b4b4b}
 div.header a:visited{color:#4b4b4b}
+.loginContent{
+  width: 100vw;
+  background: linear-gradient(135deg,hotpink,white);
+  text-align: right;
+}
+.loginContent div.content{
+  width: 400px;
+  background: rgba(0,0,0,0);
+}
+.loginContent p{margin:0;}
+.mainContent a:link{color:#235AFF}
+.mainContent a:visited{color:#235AFF}
+.mainContent a:hover{color:deeppink}
+.mainContent a:active{color:red}
 .mainContent{
   display:-wevkit-flex;
   display:flex;

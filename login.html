@@ -3,50 +3,8 @@
   <head>
     <meta charset="utf-8">
     <link rel="icon" type="image\png" href="bookIcon.png">
+    <link rel="stylesheet" type="text/css" href="EndezaStyle.css">
     <title>login:課題管理システム</title>
-    <style type="text/css">
-      body{
-        margin: 0;
-      }
-      div.header{
-        background: lightgreen;
-        height: 50px;
-        font-size: 2rem;
-        position: sticky;
-        top: 0;
-        color:#4b4b4b;
-        z-index:100;
-        display: -wevkit-flex;
-        display: flex;
-        align-items:flex-start;
-        white-space: nowrap;
-        vertical-align: top;
-      }
-      div.header img{
-        margin-top: 5px;
-        margin-left: 5px;
-        margin-right: 40px;
-        margin-bottom: 5px;
-      }
-      div.header a{
-        text-decoration: none;
-      }
-      a snap.align_top{
-        vertical-align: top;
-      }
-      div.header a:link{color:#4b4b4b}
-      div.header a:visited{color:#4b4b4b}
-      .mainContent{
-        width: 100vw;
-        background: linear-gradient(135deg,hotpink,white);
-        text-align: right;
-      }
-      .mainContent div.content{
-        width: 400px;
-        background: rgba(0,0,0,0);
-      }
-      .mainContent p{margin:0;}
-    </style>
   </head>
   <body>
     <script type="text/javascript">
@@ -63,10 +21,10 @@
       }
     </script>
     <div class="header">
-      <a href="index.html"><img src="bookIcon.png" alt="" height="40px" vspase="5px">
-      課題管理システム</a>
+      <a href="index.html"><img src="bookIcon.png" alt="" height="40px">
+      <snap class="align_top">課題管理システム</snap></a>
     </div>
-    <div class="mainContent">
+    <div class="loginContent">
       <div class="content">
         <from method="post" action=""><br>
           <p>ログインID<input type="text" name="userID" required></p><br>
