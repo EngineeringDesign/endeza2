@@ -1,0 +1,41 @@
+<!--登録ページ
+この後メール送りましたページを表示させる-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image\png" href="bookIcon.png">
+    <link rel="stylesheet" type="text/css" href="EndezaStyle.css">
+    <title>login:課題管理システム</title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var host = location.hostname;
+      var ref = document.referrer;
+
+/* デバッグ用に条件式無視
+      if(ref.length == 0){//!条件式注意!
+        alert("ページ内のリンクを踏んでください");
+        window.open("about:blank","_self").close();
+      }
+      else if(ref.indexOf(host) == -1){//!条件式注意!
+        alert("ページ内のリンクを踏んでください");
+        window.open("about:blank","_self").close();
+        //window.location.href=ref;
+      } */
+    </script>
+    <div class="header">
+      <a href="index.html"><img src="bookIcon.png" alt="" height="40px">
+      <snap class="align_top">課題管理システム</snap></a>
+    </div>
+    <div class="loginContent">
+      <div class="content">
+        <from method="post" action=""><br>
+          <div class="textAlignLeft">新規登録</div>
+          <label>ユーザーネーム</label>
+          <p><input type="submit"></p>
+        </from>
+      </div>
+    </div>
+  </body>
+</html>

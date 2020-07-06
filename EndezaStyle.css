@@ -1,5 +1,15 @@
 body{
   margin: 0;
+  /*font-family: ;*/
+}
+div.textAlignRight{
+  text-align: right;
+}
+div.textAlignLeft{
+  text-align: left;
+}
+div.textAlignCenter{
+  text-align: center;
 }
 div.header{
   background: lightgreen;
@@ -35,6 +45,10 @@ div.header a:visited{color:#4b4b4b}
 }
 .loginContent div.content{
   width: 400px;
+  background: rgba(0,0,0,0);
+}
+.loginContent h1{
+  margin: 0;
   background: rgba(0,0,0,0);
 }
 .loginContent p{margin:0;}

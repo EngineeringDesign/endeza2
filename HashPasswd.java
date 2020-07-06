@@ -1,3 +1,5 @@
+// パスワードのハッシュ化
+// 平文パスワード->ハッシュドパスワード
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -45,6 +47,7 @@ public class HashPasswd {
             }
             return sb.toString();
         }
+        //getBytesのハッシュ化
         public static byte[] getHashedSalt(String salt){
             MessageDigest messageDigest;
             try{

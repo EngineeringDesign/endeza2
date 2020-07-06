@@ -1,41 +1,54 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
-  <title>cookie sample1</title>
-</head>
-<body>
-  <input id="input1" value=""/><br>
-  <button onclick="writeCookie()">書き込み</button><br>
-  <button onclick="readCookie()">読み込み</button><br>
-  <button onclick="deleteCookie()">削除</button><br><br>
+＜Javascript＞
+// ページ読込完了後にボタンにclickイベントを登録する
+window.addEventListener("load", function(){
+	document.getElementById("send_mixdata").addEventListener("click", function(){
+		// FoemDataオブジェクトに要素セレクタを渡して宣言する
+		var formDatas = document.getElementById("userinfo2");
+		var mixedDatas = new FormData(formDatas);
 
+		// appendメソッドでキーとデータの組をセットする
+		// append("キー(FORMで云うところのname属性値)",  "データ")でデータをセットできる
+		// appendではデータは追加となる
+		mixedDatas.append("filename",  "test.txt");
+		mixedDatas.append("filesize",  "10,154B");
 
+		// XHRの宣言
+		var XHR = new XMLHttpRequest();
 
-  <script type="text/javascript">
-    // cookieの値を読み書きする要素
-    var input1 = document.getElementById("input1");
+		// openメソッドにPOSTを指定して送信先のURLを指定します
+		XHR.open("POST", "./hoge/fuga.php", true);
 
-    // 書き込み
-    function writeCookie() {
-      var cookieValue = input1.value;
-      document.cookie = "mycookie=" + cookieValue;
-      console.log(document.cookie);
-    }
+		// sendメソッドにデータを渡して送信を実行する
+		XHR.send(mixedDatas);
 
-    // 読み込み
-    function readCookie() {
-      var tmp = document.cookie;
-      var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)mycookie\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-      input1.value = cookieValue;
-      console.log(document.cookie);
-    }
+		// サーバの応答をonreadystatechangeイベントで検出して正常終了したらデータを取得する
+		XHR.onreadystatechange = function(){
+			if(XHR.readyState == 4 && XHR.status == 200){
+				// POST送信した結果を表示する
+				document.getElementById("mixdata_response").innerHTML = XHR.responseText;
+			}
+		};
+	} ,false);
+}, false);
 
-    // 削除
-    function deleteCookie() {
-      document.cookie = "mycookie=; expires=0";
-      console.log(document.cookie);
-    }
-  </script>
-</body>
-</html>
+＜HTML＞
+<form id="userinfo2">
+  <p>
+    <label for="item1">名前</label>
+    <input name="name" id="item1">
+  </p>
+  <p>
+    <label for="item2">年齢</label>
+    <input name="old" id="item2">
+  </p>
+  <p>
+    <label for="item3">住所</label>
+    <input name="address" id="item3">
+  </p>
+</form>
+<p>
+  <button type="button" id="send_mixdata">入力値と固定値を送信する</button>
+</p>
+<div id="mixdata_response">
+  <!-- 結果を出力する -->
+</div>

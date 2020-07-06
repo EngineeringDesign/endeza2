@@ -1,3 +1,6 @@
+// 参考資料
+// これをもとにHashPasswd.javaを作成
+// というかまんまコピー元
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;

@@ -1,6 +1,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+//sqlへのコネクション作成
 class DBManager {   
     private static String url = "jdbc:mysql://localhost:3306/endeza_group10";
     private static String user = "dev";
