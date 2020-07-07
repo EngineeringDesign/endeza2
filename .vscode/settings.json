@@ -1,5 +1,9 @@
 {
     "files.exclude": {
         "*class": true
-    }
+    },
+    "java.project.referencedLibraries": [
+        "lib\\**\\*.jar",
+        "C:\\Documents\\webapp\\javax.mail.jar"
+    ]
 }
